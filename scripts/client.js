@@ -6,7 +6,7 @@ $(document).ready(function(){
   displayTask();
 
   //Create Task on Click
-  $('#createAddTask').on('click') function(){
+  $('#createAddTask').on('click' function(){
     //create true false values for tasks
     var statusIn;
     if('#statusIn').val() == "Complete"){
@@ -33,9 +33,8 @@ $(document).ready(function(){
   } //end create/add task Click
 });
 
-
   //update status on Click
-  $("#changeTaskStatus").on('click'), funtion() {
+  $("#changeTaskStatus").on('click'), funtion(){
     console.log("in changeTaskStatus on click");
     //convert to true or false statement
     var statusSelect;
@@ -56,11 +55,11 @@ $(document).ready(function(){
       type:"POST",
       url: "/changeStatus",
       data: objectToSend
-      sucess: function(data){
+      success: function(data){
       console.log("back from changeStatus:", data);
       displayTask();
     } // end success
-  }); //end ajax
+  } //end ajax
 }); //end change task on Click
 
 
@@ -113,9 +112,9 @@ var displayTask = function(){
         deleteList+='<option data-value="'+data[ i ].id+'"> Item '+ data[ i ].id + "</option>";
       }
       //display on DOM
-      $('#toDoList').html(displayString);
-      $('#selectTaskIn').html(selectList);
-      $('#deleteTaskSel').html(deleteList);
+      $('#toDoList').apend(displayString);
+      $('#selectTaskIn').apend(selectList);
+      $('#deleteTaskSelect').apend(deleteList);
     }// end success
 
   });//end ajax
